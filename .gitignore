@@ -2,6 +2,10 @@
 node_modules/
 bower_components/
 lib/
-levels/
-sounds/
-graphics/sprites/
+sounds/*
+!sounds/README.md
+graphics/sprites/*
+!graphics/sprites/README.md
+levels/*.json
+!levels/README.md
+!README.md
