@@ -1,0 +1,18 @@
+.viewport {
+    position: absolute;
+    header {
+        background: $lightgrey;
+        font-size: 12px;
+        padding: 1em;
+        color: $darkgrey;
+    }
+    .tool-strip {
+        position: absolute;
+        bottom: 0;
+        padding: 10px;
+        color: $darkgrey;
+        width: 100%;
+        border-top: 1px solid $grey;
+        background: $lightgrey;
+    }
+}

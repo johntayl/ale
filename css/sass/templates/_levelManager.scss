@@ -1,0 +1,36 @@
+.level-manager {
+    width: 13%;
+    position:absolute;
+    top: 45px;
+    bottom: 0;
+    border-right: 2px solid $grey;
+
+    .level-controls {
+        width: 100%;
+        background: $grey;
+        ul {
+            list-style-type: none;
+            margin: 0;
+            li {
+                display: inline-block;
+                &:hover {
+                    background: darken($grey, 5%);
+                }
+            }
+        }
+        i {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    }
+
+    .levels {
+        ul {
+            list-style-type: none;
+            margin: 0;
+            li {
+                padding: 0px 10px 10px 10px;
+            }
+        }
+    }
+}

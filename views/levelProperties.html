@@ -1,0 +1,54 @@
+<section class="level-properties viewport" ng-controller="SidebarController">
+    <h2>Assets</h2>
+    <form action="/api/fileupload.php" method="post" enctype="multipart/form-data">
+        Upload Files: <input type="file" name="imagefiles[]" multiple/><br/>
+        <input type="hidden" name="imagetype" value="spritesheet"/>
+        <input type="submit" value="Upload"/>
+    </form>
+    <div id="asset-selector" class="scrollable">
+        <img src="{{image}}" title="{{image}}" class="asset" ng-repeat="image in assets.spritesheets" ng-click="SelectAssetImage($event)"/>
+    </div>
+    <div class="well">
+        <h2>Graphics</h2>
+        <label>x:</label>
+        <input type="number" class="mini" ng-model="level.graphics.animations[selectedGraphic].sprite.x" step="10"/>
+        <label>y:</label>
+        <input type="number" class="mini" ng-model="level.graphics.animations[selectedGraphic].sprite.y" step="10"/>
+        <label>z:</label>
+        <input type="number" class="mini" ng-model="level.graphics.animations[selectedGraphic].sprite.z" step="10"/>
+        <br/><br/>
+        <label>Width:</label>
+        <input type="number" class="mini" ng-model="level.graphics.animations[selectedGraphic].sprite.width" step="10"/>
+        <label>Height:</label>
+        <input type="number" class="mini" ng-model="level.graphics.animations[selectedGraphic].sprite.height" step="10"/>
+        <br/><br/>
+        <label>Scale:</label>
+        <input type="number" class="mini" ng-model="level.graphics.animations[selectedGraphic].sprite.scale"/>
+        <br/><br/>
+        <h2>Animation</h2>
+        <label>Frames:</label>
+        <input type="text" class="mini" ng-model="level.graphics.animations[selectedGraphic].animation.frames"/>
+        <label>Count:</label>
+        <input type="text" class="mini" ng-model="level.graphics.animations[selectedGraphic].animation.frameCount"/>
+        <br/><br/>
+        <label>Interval:</label>
+        <input type="text" class="mini" ng-model="level.graphics.animations[selectedGraphic].animation.interval"/>
+        <label>Loop:</label>
+        <input type="text" class="mini" ng-model="level.graphics.animations[selectedGraphic].animation.loop"/>
+        <br/><br/>
+        <button ng-click="PlayAnimation(level.graphics.animations[selectedGraphic])">Play Animation</button>
+        <h2>Transform</h2>
+        <label>Duration:</label>
+        <input type="text" class="mini" ng-model="level.graphics.animations[selectedGraphic].transformProps.duration"/>
+        <br/><br/>
+        <label>X:</label>
+        <input type="text" class="mini" ng-model="level.graphics.animations[selectedGraphic].transformProps.x"/>
+        <label>Y:</label>
+        <input type="text" class="mini" ng-model="level.graphics.animations[selectedGraphic].transformProps.y"/>
+        <ul class="graphic-list">
+            <li ng-click="ChangeGraphic($event, $index)" ng-repeat="graphic in level.graphics.animations">{{graphic.sprite.image}}</li>
+        </ul>
+        <br/><br/>
+        <button ng-click="RemoveGraphic(selectedGraphic)">Remove Graphic</button>
+    </div>
+</section>

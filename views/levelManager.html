@@ -1,0 +1,14 @@
+<section class="level-manager viewport" ng-controller="LevelManagerController" ng-init="Init()">
+    <header>Levels</header>
+    <div class="level-controls">
+        <input type="text" ng-model="newLevel" on-enter="NewLevel()" placeholder="New Level"/>
+    </div>
+    <div class="levels">
+        <ul>
+            <li ng-repeat="level in levels" ng-click="LoadLevel(level.file)">
+                {{level.level_id}}
+                <i class="fa fa-ban" ng-click="DeleteLevel(level.file)"></i>
+            </li>
+        </ul>
+    </div>
+</section>
