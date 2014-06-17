@@ -1,4 +1,6 @@
 <section class="editor viewport" ng-controller="EditorController" ng-init="Init()" ng-cloak ng-mousemove="UpdateCursor($event)">
-    <div animate-dir="obj" ng-repeat="obj in level.graphics.sprites" style="background-image: url('{{obj.sprite.image}}'); left: {{obj.sprite.x}}px; top: {{obj.sprite.y}}px; z-index: {{obj.sprite.z}}; width: {{obj.sprite.width}}px; height: {{obj.sprite.height}}px; -webkit-transform: scale({{obj.sprite.scale}});"></div>
-    <div class="tool-strip">X: {{mouseX}} Y: {{mouseY}}</div>
+    <div class="map">
+        <div class="grid"></div>
+        <div animate-dir="obj" ng-repeat="obj in level.graphics.sprites" style="background-image: url('{{obj.sprite.image}}'); left: {{obj.sprite.x}}px; top: {{obj.sprite.y}}px; z-index: {{obj.sprite.z}}; width: {{obj.sprite.width}}px; height: {{obj.sprite.height}}px; -webkit-transform: scale({{obj.sprite.scale}});"></div>
+    </div>
 </section>
